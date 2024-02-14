@@ -1,6 +1,7 @@
 import time, os
 
 from dotenv import load_dotenv
+
 from selene import browser
 
 load_dotenv()
@@ -26,9 +27,11 @@ class LoginPage:
         browser.element('.compose-button__txt').click()
         browser.element('.container--zU301').type(mail_sber).press_enter()
         browser.element('.container--3QXHv').click()
-        browser.element('[name="Subject"]').type('Hello, Andrey')
+        browser.element('[name="Subject"]').type('Hello, Andrey from Python')
         browser.element('div[role="textbox"]').type(
-            'Привет!\nЭто сообщение отправлено через автотест\nВот ссылка на github')
+            '''Привет!\nЭто сообщение отправлено через автотест.
+        \nВот ссылка на github https://github.com/RamilSay/ram_mail_ru'''
+        )
         browser.element('.vkuiButton__in').click()
         time.sleep(4)
         return self
