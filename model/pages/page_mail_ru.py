@@ -7,7 +7,7 @@ from selene import browser
 load_dotenv()
 login = os.getenv('LOGIN')
 password = os.getenv('PASSWORD')
-mail_sber = os.getenv('MAIL_SBER')
+mail_1 = os.getenv('MAIL_1')
 
 
 class LoginPage:
@@ -25,7 +25,7 @@ class LoginPage:
     #  Пишем письмо и отправляем сообщение
     def send_mail(self):
         browser.element('.compose-button__txt').click()
-        browser.element('.container--zU301').type(mail_sber).press_enter()
+        browser.element('.container--zU301').type(mail_1).press_enter()
         browser.element('.container--3QXHv').click()
         browser.element('[name="Subject"]').type('Hello, Andrey from Python')
         browser.element('div[role="textbox"]').type(
